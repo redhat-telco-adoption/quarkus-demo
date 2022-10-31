@@ -15,6 +15,19 @@ public class GreetingResource {
     @ConfigProperty(name = "kubernetes.namespace", defaultValue = "Not defined!")
     String k8sNamespace;
 
+    @ConfigProperty(name = "application.name", defaultValue = "Not Defined!")
+    String appName;
+
+    @ConfigProperty(name = "app.environment", defaultValue = "Not Defined")
+    String appEnvironment;
+
+    @ConfigProperty(name = "db.username", defaultValue = "Not Defined!")
+    String dbUsername;
+    @ConfigProperty(name = "db.password", defaultValue = "Not Defined!")
+    String dbPassword;
+    @ConfigProperty(name = "db.name", defaultValue = "Not Defined!")
+    String dbName;
+
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Map<String, String> hello() {
@@ -23,6 +36,11 @@ public class GreetingResource {
 
         resp.put("msg", "Quarkus Demo Application");
         resp.put("namespace", k8sNamespace);
+        resp.put("app-name", appName);
+        resp.put("app-environment", appEnvironment);
+        resp.put("db-username", dbUsername);
+        resp.put("db-password", dbPassword);
+        resp.put("db-name", dbName);
 
         return resp;
     }
