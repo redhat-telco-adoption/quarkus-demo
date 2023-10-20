@@ -42,7 +42,7 @@ public class GreetingResource {
         resp.put("db-password", dbPassword);
         resp.put("db-name", dbName);
         resp.put("extra-param", "extra");
-        resp.put("greeeting", "Hello World!");
+        resp.put("greeeting", "Hello Everyone!");
 
         return resp;
     }
